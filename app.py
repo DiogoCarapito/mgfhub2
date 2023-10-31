@@ -1,6 +1,5 @@
 import streamlit as st
 from utils.etl import etl_xlsx
-import os
 
 # from utils.graphs import graph_indicador
 
@@ -21,7 +20,7 @@ def main():
             accept_multiple_files=False,
             help="Ajuda",
         )
-
+    
         if st.session_state["uploaded_file"] is None:
             pass
 
@@ -68,6 +67,14 @@ def main():
         vis = st.radio(
             "Escolha o tipo de visualização", ["Tabela", "Dataframe"], horizontal=True
         )
+        
+        st.write(f"Nº de indicadores: {main_df['id'].nunique()}")
+        #main_xlsx = main_df.to_excel("download.xlsx", index=False)
+
+        # download button to xlsx
+        #st.download_button(label="Download XLSX", data=main_xlsx, file_name="download.xlsx",)
+
+
 
         if vis == "Tabela":
             st.table(main_df)
