@@ -3,19 +3,18 @@ import streamlit as st
 
 
 def graph_indicador(df):
-
     id, nome, min_aceitavel, min_esperado, max_esperado, max_aceitavel = [
         df["id"],
         df["nome_indicador"],
         df["min_aceitavel"],
         df["min_esperado"],
         df["max_esperado"],
-        df["max_aceitavel"]
+        df["max_aceitavel"],
     ]
     score = df["CUMPRIMENTO"]
 
     # Define the colors
-    colors = ['red', 'yellow', 'green', 'yellow', 'red']
+    colors = ["red", "yellow", "green", "yellow", "red"]
 
     # Define the ranges of the colors
     ranges = [
@@ -34,7 +33,7 @@ def graph_indicador(df):
         ax.axvspan(start, end, facecolor=color, alpha=0.3)
 
     # Plot the indicator value
-    bar = ax.barh(id, score, height=0.6, color=(46/255,80/255,140/255,1))
+    bar = ax.barh(id, score, height=0.6, color=(46 / 255, 80 / 255, 140 / 255, 1))
 
     # Set the plot limits and ticks
     ax.set_xlim(0, 100)
@@ -48,7 +47,9 @@ def graph_indicador(df):
     # Add the value label
     rect = bar[0]
     width = rect.get_width()
-    ax.text(width, rect.get_y() + rect.get_height() / 2, f'{width}%', ha='left', va='center')
+    ax.text(
+        width, rect.get_y() + rect.get_height() / 2, f"{width}%", ha="left", va="center"
+    )
 
     # Display the plot in Streamlit
     return st.pyplot(fig)

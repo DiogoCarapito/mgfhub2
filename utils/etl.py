@@ -73,17 +73,23 @@ def preprocess(df):
     # remove the last space in the string
     df_stack["Medico Familia"] = df_stack["Medico Familia"].str.rstrip()
 
-    df_final = df_stack[["Indicador", "Medico Familia", "Total Utentes","Utentes Cumpridores", "CUMPRIMENTO"]]
+    df_final = df_stack[
+        [
+            "Indicador",
+            "Medico Familia",
+            "Total Utentes",
+            "Utentes Cumpridores",
+            "CUMPRIMENTO",
+        ]
+    ]
     df_final["id"] = df_final["Indicador"].apply(id_indicador)
 
     df_final.dropna(inplace=True)
 
     intervalos = pd.read_csv("data/indicadores_post_processed.csv")
 
-    df_com_intervalos = pd.merge(
-        df_final, intervalos, how="left", on="id"
-    )
-    #.drop_duplicates()
+    df_com_intervalos = pd.merge(df_final, intervalos, how="left", on="id")
+    # .drop_duplicates()
 
     df_com_intervalos.dropna(inplace=True)
 
@@ -91,17 +97,20 @@ def preprocess(df):
     df_com_intervalos = cumprimento_unidade(df_com_intervalos)
 
     df_com_intervalos = df_com_intervalos[
-        ["id",
-        "nome_abreviado",
-        "area_clinica",
-        "Medico Familia",
-        "Total Utentes",
-        "Utentes Cumpridores",
-        "CUMPRIMENTO",
-        "min_aceitavel",
-        "min_esperado",
-        "max_esperado",
-        "max_aceitavel"]]
+        [
+            "id",
+            "nome_abreviado",
+            "area_clinica",
+            "Medico Familia",
+            "Total Utentes",
+            "Utentes Cumpridores",
+            "CUMPRIMENTO",
+            "min_aceitavel",
+            "min_esperado",
+            "max_esperado",
+            "max_aceitavel",
+        ]
+    ]
 
     return df_com_intervalos
 
@@ -112,9 +121,9 @@ def etl_xlsx(file_xlsx):
         file_xlsx = pd.read_excel(file_xlsx)
 
     else:
-            file_xlsx = pd.read_excel(
-                "/data/P02_01_R04_ Indicadores por lista de utentes de médico - cumpridores e não cumpridores.xlsx"
-            )
-        
+        file_xlsx = pd.read_excel(
+            "/data/P02_01_R04_ Indicadores por lista de utentes de médico - cumpridores e não cumpridores.xlsx"
+        )
+
     df = preprocess(file_xlsx)
     return df
