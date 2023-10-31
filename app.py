@@ -62,7 +62,7 @@ def main():
 
         #st.write(main_df.iloc[1].to_dict())
 
-        st.write(main_df)
+        st.table(main_df)
 
         # Graphs
         #graph_indicador(main_df.loc[0].to_dict())
