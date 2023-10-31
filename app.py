@@ -62,7 +62,14 @@ def main():
 
         #st.write(main_df.iloc[1].to_dict())
 
-        st.table(main_df)
+        vis = st.radio("Escolha o tipo de visualização", ["Tabela", "Dataframe"], horizontal=True)
+        st.write(f"Filtros: {med} | {area_clinica}")
+        if vis == "Tabela":
+            st.table(main_df)
+        elif vis == "Dataframe":
+            st.dataframe(main_df)
+
+        
 
         # Graphs
         #graph_indicador(main_df.loc[0].to_dict())
