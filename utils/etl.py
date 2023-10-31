@@ -3,6 +3,8 @@ ETL pipeline for data processing
 """
 
 import pandas as pd
+from utils.indicador import id_indicador
+from utils.calc import cumprimento_unidade
 
 
 def preprocess(df):
@@ -71,9 +73,37 @@ def preprocess(df):
     # remove the last space in the string
     df_stack["Medico Familia"] = df_stack["Medico Familia"].str.rstrip()
 
-    df_final = df_stack[["Indicador", "Medico Familia", "Total Utentes", "Cumprimento"]]
+    df_final = df_stack[["Indicador", "Medico Familia", "Total Utentes","Utentes Cumpridores", "Cumprimento"]]
+    df_final["id"] = df_final["Indicador"].apply(id_indicador)
 
-    return df_final
+    df_final.dropna(inplace=True)
+
+    intervalos = pd.read_csv("data/indicadores_post_processed.csv")
+
+    df_com_intervalos = pd.merge(
+        df_final, intervalos, how="left", on="id"
+    )
+    #.drop_duplicates()
+
+    df_com_intervalos.dropna(inplace=True)
+
+    # create new rows with the weighted average of the cumprimento for each indicador
+    df_com_intervalos = cumprimento_unidade(df_com_intervalos)
+
+    df_com_intervalos = df_com_intervalos[
+        ["id",
+        "nome_abreviado",
+        "area_clinica",
+        "Medico Familia",
+        "Total Utentes",
+        "Utentes Cumpridores",
+        "Cumprimento",
+        "min_aceitavel",
+        "min_esperado",
+        "max_esperado",
+        "max_aceitavel"]]
+
+    return df_com_intervalos
 
 
 def etl_xlsx(file_xlsx):
@@ -85,7 +115,7 @@ def etl_xlsx(file_xlsx):
     else:
         try:
             file_xlsx = pd.read_excel(
-                "data/P02_01_R04_ Indicadores por lista de utentes de médico - cumpridores e não cumpridores.xlsx"
+                "/data/P02_01_R04_ Indicadores por lista de utentes de médico - cumpridores e não cumpridores.xlsx"
             )
         except:
             return None
