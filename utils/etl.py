@@ -83,9 +83,12 @@ def etl_xlsx(file_xlsx):
 
         # preprocess
     else:
-        file_xlsx = pd.read_excel(
-            "data/P02_01_R04_ Indicadores por lista de utentes de médico - cumpridores e não cumpridores.xlsx"
-        )
+        try:
+            file_xlsx = pd.read_excel(
+                "data/P02_01_R04_ Indicadores por lista de utentes de médico - cumpridores e não cumpridores.xlsx"
+            )
+        except:
+            return None
 
     df = preprocess(file_xlsx)
     return df
