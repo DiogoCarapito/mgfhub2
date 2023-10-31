@@ -4,12 +4,15 @@ from utils.etl import etl_xlsx
 
 def main():
     """Main page content"""
+
+    st.set_page_config(layout="wide")
+
     st.title("mgfhub 2.0")
 
     # File uploader
     file_xlsx = st.file_uploader(
         "Upload de excel proveniente do MIMUF",
-        type="xlsx",
+        type=["xlsx"],
         accept_multiple_files=False,
         help="Ajuda",
     )
