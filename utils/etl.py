@@ -7,7 +7,8 @@ import pandas as pd
 
 def etl_xlsx(file_xlsx):
     if file_xlsx is not None:
-        file_xlsx = pd.read_excel(file_xlsx, engine="openpyxl")
+        #file_xlsx = pd.read_excel(file_xlsx, engine="openpyxl")
+        file_xlsx = pd.read_excel(file_xlsx)
 
         return file_xlsx
     else:
