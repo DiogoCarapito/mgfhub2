@@ -9,7 +9,7 @@ def cumprimento_unidade(df):
         ).agg(
             {"Total Utentes": "sum", "Utentes Cumpridores": "sum"}
         ).reset_index()
-        df_indicador["Cumprimento"] = (df_indicador["Utentes Cumpridores"] / df_indicador["Total Utentes"] * 100).round(1)
+        df_indicador["CUMPRIMENTO"] = (df_indicador["Utentes Cumpridores"] / df_indicador["Total Utentes"] * 100).round(1)
         df_indicador["Medico Familia"] = "Unidade"
 
         df = df.append(df_indicador)

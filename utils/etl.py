@@ -54,12 +54,12 @@ def preprocess(df):
     df_stack["Total Utentes"] = df_stack["Total Utentes"].astype(int)
 
     # create a new column thatb results from the percentage of indicador cumpridor and total
-    df_stack["Cumprimento"] = (
+    df_stack["CUMPRIMENTO"] = (
         df_stack["Utentes Cumpridores"] / df_stack["Total Utentes"] * 100
     )
 
     # round the column cumprimento to 0 decimal places
-    df_stack["Cumprimento"] = df_stack["Cumprimento"].round(1)
+    df_stack["CUMPRIMENTO"] = df_stack["CUMPRIMENTO"].round(1)
 
     # rename the column level_1 to Medico Familia
     df_stack = df_stack.rename(columns={"level_1": "Medico Familia"})
@@ -73,7 +73,7 @@ def preprocess(df):
     # remove the last space in the string
     df_stack["Medico Familia"] = df_stack["Medico Familia"].str.rstrip()
 
-    df_final = df_stack[["Indicador", "Medico Familia", "Total Utentes","Utentes Cumpridores", "Cumprimento"]]
+    df_final = df_stack[["Indicador", "Medico Familia", "Total Utentes","Utentes Cumpridores", "CUMPRIMENTO"]]
     df_final["id"] = df_final["Indicador"].apply(id_indicador)
 
     df_final.dropna(inplace=True)
@@ -97,7 +97,7 @@ def preprocess(df):
         "Medico Familia",
         "Total Utentes",
         "Utentes Cumpridores",
-        "Cumprimento",
+        "CUMPRIMENTO",
         "min_aceitavel",
         "min_esperado",
         "max_esperado",
@@ -111,14 +111,10 @@ def etl_xlsx(file_xlsx):
         # file_xlsx = pd.read_excel(file_xlsx, engine="openpyxl")
         file_xlsx = pd.read_excel(file_xlsx)
 
-        # preprocess
     else:
-        try:
             file_xlsx = pd.read_excel(
                 "/data/P02_01_R04_ Indicadores por lista de utentes de médico - cumpridores e não cumpridores.xlsx"
             )
-        except:
-            return None
-
+        
     df = preprocess(file_xlsx)
     return df

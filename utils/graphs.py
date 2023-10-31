@@ -12,7 +12,7 @@ def graph_indicador(df):
         df["max_esperado"],
         df["max_aceitavel"]
     ]
-    score = df["Cumprimento"]
+    score = df["CUMPRIMENTO"]
 
     # Define the colors
     colors = ['red', 'yellow', 'green', 'yellow', 'red']
