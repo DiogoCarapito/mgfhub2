@@ -85,7 +85,8 @@ def main():
         # graph_indicador(main_df.loc[0].to_dict())
         # graph_indicador(
         # {"id": 1, "nome_indicador": "teste", "min_aceitavel": 50, "min_esperado": 70, "max_esperado": 100, "max_aceitavel": 100, "Cumprimento": 60})
-
+    
+    return None
 
 # Press the green button in the gutter to run the script.
 if __name__ == "__main__":

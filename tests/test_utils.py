@@ -1,5 +1,5 @@
-from utils.utils import func
+from utils import utils
 
 
 def test_func():
-    assert func() is None
+    assert utils.func() is None
