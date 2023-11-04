@@ -1,3 +1,5 @@
+[![Github Actions Workflow](https://github.com/DiogoCarapito/mgfhub2/actions/workflows/main.yaml/badge.svg)](https://github.com/DiogoCarapito/mgfhub2/actions/workflows/main.yaml)
+
 # mgfhub2
 mgfhub 2.0 with streamlit
 
