@@ -20,7 +20,7 @@ def main():
             accept_multiple_files=False,
             help="Ajuda",
         )
-    
+
         if st.session_state["uploaded_file"] is None:
             pass
 
@@ -54,7 +54,7 @@ def main():
 
     if st.session_state["uploaded_file"] is not None:
         # Filter dataframe
-        if med != "Todos os Médicos":
+        if med != "TODOS os Médicos":
             main_df = main_df[main_df["Medico Familia"] == med]
         elif med == "Unidade":
             main_df.drop("Medico Familia", axis=1, inplace=True)
@@ -67,14 +67,12 @@ def main():
         vis = st.radio(
             "Escolha o tipo de visualização", ["Tabela", "Dataframe"], horizontal=True
         )
-        
+
         st.write(f"Nº de indicadores: {main_df['id'].nunique()}")
-        #main_xlsx = main_df.to_excel("download.xlsx", index=False)
+        # main_xlsx = main_df.to_excel("download.xlsx", index=False)
 
         # download button to xlsx
-        #st.download_button(label="Download XLSX", data=main_xlsx, file_name="download.xlsx",)
-
-
+        # st.download_button(label="Download XLSX", data=main_xlsx, file_name="download.xlsx",)
 
         if vis == "Tabela":
             st.table(main_df)
@@ -85,8 +83,7 @@ def main():
         # graph_indicador(main_df.loc[0].to_dict())
         # graph_indicador(
         # {"id": 1, "nome_indicador": "teste", "min_aceitavel": 50, "min_esperado": 70, "max_esperado": 100, "max_aceitavel": 100, "Cumprimento": 60})
-    
-    return None
+
 
 # Press the green button in the gutter to run the script.
 if __name__ == "__main__":

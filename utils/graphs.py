@@ -3,7 +3,7 @@ import streamlit as st
 
 
 def graph_indicador(df):
-    id, nome, min_aceitavel, min_esperado, max_esperado, max_aceitavel = [
+    id_indicador, nome_indicador, min_aceitavel, min_esperado, max_esperado, max_aceitavel = [
         df["id"],
         df["nome_indicador"],
         df["min_aceitavel"],
@@ -42,7 +42,7 @@ def graph_indicador(df):
     ax.set_xticks([min_aceitavel, min_esperado, max_esperado, max_aceitavel])
 
     # Set the y-label and title
-    ax.set_title(f"{id} - {nome}")
+    ax.set_title(f"{id_indicador} - {nome_indicador}")
 
     # Add the value label
     rect = bar[0]
