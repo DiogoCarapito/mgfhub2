@@ -1,3 +1,6 @@
+def func():
+    return None
+
 def normalizacao_medico_familia(df):
     # the column medico familia sould have upper case only in the first letter of each word and remove all the spaces expect between the words
     df["Medico Familia"] = df["Medico Familia"].str.title()
