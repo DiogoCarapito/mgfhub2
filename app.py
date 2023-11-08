@@ -216,6 +216,7 @@ def main():
                 max_value=2.0,
                 value=(0.0, 2.0),
                 step=0.1,
+                help="filtrar por score para excluir indicadores fora do intervalo selecionado",
             )
 
         with col_slide_2:
@@ -227,7 +228,8 @@ def main():
                 min_value=0.0,
                 max_value=max_percent_idg,
                 value=(0.0, max_percent_idg),
-                step=0.2,
+                step=0.1,
+                help="filtrar por impacto no IDG em percentagem para excluir indicadores fora do intervalo selecionado",
             )
 
         bicsp_table = bicsp_table[bicsp_table["Score"] >= filtro_score[0]]
@@ -263,23 +265,40 @@ def main():
         # IDG máximo
         idg_maximo = calcular_idg_maximo(bicsp_table)
 
+        # diferença entre idg maximo e idg actual
+        diferenca_idg = round(idg_maximo - idg_actual, 2)
+
         # colunas visuais
         col_1, col_2, col_3, col_4 = st.columns(4)
         with col_1:
-            st.metric("Número indicadores", numero_de_indicadores)
+            st.metric(
+                "Número indicadores",
+                numero_de_indicadores,
+                help="Número de indicadores selecionados",
+            )
 
         with col_2:
             # calculo do IDG maximo
-            st.metric("IDG maximo dos indicadores disponíveis", idg_maximo)
+            st.metric(
+                "IDG maximo possível",
+                idg_maximo,
+                help="IDG máximo possível dos indicadores selecionados",
+            )
 
         with col_3:
             # calculo idg
-            st.metric("IDG dos indicadores disponíveis", idg_actual)
+            st.metric(
+                "IDG calculado",
+                idg_actual,
+                help="IDG real calculado com base nos scores após aplicar os filtros selecionados",
+            )
 
         with col_4:
             # percentamgem do idg maximo
             st.metric(
-                "Percentagem do IDG Maximo", round(idg_actual / idg_maximo * 100, 2)
+                "Diferença entre máximo e calculado",
+                diferenca_idg,
+                help="Diferença entre o IDG máximo e o IDG calculado dos indicadores selecionados. Corresponde ao potencial de ganho no IDG se os indicadores selecionados passarem a serem completamente cumpridos",
             )
 
         # remove columns
