@@ -63,7 +63,6 @@ def graph_indicador(df):
     return st.pyplot(fig)
 
 
-
 def bar_chart(df):
     """
     Create a pie chart where the size of each pie is the percentage_do_idg and the color and label of each pie comes from the score of its idicadores
@@ -108,10 +107,9 @@ def bar_chart(df):
     )
 
     # rgb colors for each area from a RdYlGr gradient depending on the value of percentagem in between 0 a 1
-    
-    #df_pie_chart["color"] = df_pie_chart["percentagem"].apply(
-    #    lambda x: plt.cm.RdYlGn(x)
-    #)
 
+    # df_pie_chart["color"] = df_pie_chart["percentagem"].apply(
+    #    lambda x: plt.cm.RdYlGn(x)
+    # )
 
     return df_pie_chart
