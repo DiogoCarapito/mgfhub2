@@ -1,2 +1,5 @@
 [theme]
 base="light"
+#blue
+primaryColor = "#2196F3"
+secondaryBackgroundColor = "#2196F3"
