@@ -14,16 +14,14 @@ def extrair_indicadores(df, nome_coluna):
     cria uma nova coluna com o id do indicador
     """
     df[nome_coluna] = df[nome_coluna].str.split(".").str[1]
-    
 
     return df
 
 
 def etl_mimuf_p02_01_R03(file):
-    
     # open xlsx file
     df = pd.read_excel(file)
-    
+
     # remove the 2 initial columns
     df = df.iloc[:, 2:]
 
@@ -35,11 +33,10 @@ def etl_mimuf_p02_01_R03(file):
 
     # processar id indicadores
     df = extrair_indicadores(df, "id_indicador")
- 
 
     # remove indicador and ID id_Indicador
     df = df.drop(["indicador"], axis=1)
-    
+
     # create a multiindex dataframe from the info in the header, 1st and 2nd row of df
     df.columns = pd.MultiIndex.from_tuples(zip(df.columns, df.iloc[0], df.iloc[1]))
 
@@ -68,14 +65,25 @@ def etl_mimuf_p02_01_R03(file):
 
     # convert indicador into int
     df_stack["id"] = df_stack["indicador"].astype(int)
-    
-    df_final = df_stack[["id", "Medico Familia", "Den.", "Num.", "Valor", ]]
 
-    df_final = df_final.rename(columns={"Den.": "Total Utentes", "Num.": "Utentes Cumpridores"})
+    df_final = df_stack[
+        [
+            "id",
+            "Medico Familia",
+            "Den.",
+            "Num.",
+            "Valor",
+        ]
+    ]
+
+    df_final = df_final.rename(
+        columns={"Den.": "Total Utentes", "Num.": "Utentes Cumpridores"}
+    )
 
     # Total Utentes and Utentes Cumpridores switch , to . and . to , and then to be int
-    df_final = transform_to_float(df_final, ["Total Utentes", "Utentes Cumpridores", "Valor"])
-
+    df_final = transform_to_float(
+        df_final, ["Total Utentes", "Utentes Cumpridores", "Valor"]
+    )
 
     df_final.sort_values(by=["id"], inplace=True)
 
@@ -84,7 +92,7 @@ def etl_mimuf_p02_01_R03(file):
     df_com_intervalos = pd.merge(df_final, intervalos, how="left", on="id")
 
     df_com_intervalos.dropna(inplace=True)
-    
+
     df_com_intervalos = cumprimento_unidade(df_com_intervalos)
 
     df_com_intervalos = df_com_intervalos[
@@ -106,11 +114,10 @@ def etl_mimuf_p02_01_R03(file):
     # sort dataframe by id in ascending order
     df_com_intervalos.sort_values(by=["id"], inplace=True)
 
-    #remove rows that dont belong to a list of indicadores
+    # remove rows that dont belong to a list of indicadores
     impacto_idg = pd.read_csv("data/usf_ucsp_indicadores_2022_comimpactoIDG.csv")
     impacto_idg = impacto_idg["id"].unique().tolist()
     df_com_intervalos = df_com_intervalos[df_com_intervalos["id"].isin(impacto_idg)]
-
 
     df_com_intervalos = calc_score(df_com_intervalos)
 
@@ -119,12 +126,14 @@ def etl_mimuf_p02_01_R03(file):
     df_score = df_score[["id_indicador", "value"]]
 
     # rename id_indicador to id
-    df_score = df_score.rename(columns={"id_indicador": "id", "value":"percentagem"})
+    df_score = df_score.rename(columns={"id_indicador": "id", "value": "percentagem"})
 
     # merge the 2 dataframes so that df gets a new column where the ID is the same
     df_com_intervalos = pd.merge(df_com_intervalos, df_score, how="left", on="id")
 
-    df_com_intervalos["percentagem_final"] = df_com_intervalos["percentagem"] * df_com_intervalos["score"] / 2
+    df_com_intervalos["percentagem_final"] = (
+        df_com_intervalos["percentagem"] * df_com_intervalos["score"] / 2
+    )
 
     return df_com_intervalos
 
@@ -272,26 +281,28 @@ def etl_bicsp(file):
     df_score = df_score[["id_indicador", "value"]]
 
     # rename id_indicador to id
-    df_score = df_score.rename(columns={"id_indicador": "id", "value":"percentagem"})
-    
+    df_score = df_score.rename(columns={"id_indicador": "id", "value": "percentagem"})
+
     # merge the 2 dataframes so that df gets a new column where the ID is the same
     df_bicsp = pd.merge(df_bicsp, df_score, how="left", on="id")
 
     df_bicsp["percentagem_final"] = df_bicsp["percentagem"] * df_bicsp["Score"] / 2
-    
+
     # reduce the number of columns
     df_bicsp = df_bicsp.drop(["Tipo "], axis=1)
 
     # change name of column
-    df_bicsp = df_bicsp.rename(columns={
-        "Designação Indicador (+ID)": "Nome Indicador",
-        "percentagem": "percentagem_do_idg",
-        "Hierarquia Contratual - Área":"Área",
-        "Hierarquia Contratual - Sub-Área":"Sub-Área",
-        "Hierarquia Contratual - Dimensão":"Dimensão"
-        })
+    df_bicsp = df_bicsp.rename(
+        columns={
+            "Designação Indicador (+ID)": "Nome Indicador",
+            "percentagem": "percentagem_do_idg",
+            "Hierarquia Contratual - Área": "Área",
+            "Hierarquia Contratual - Sub-Área": "Sub-Área",
+            "Hierarquia Contratual - Dimensão": "Dimensão",
+        }
+    )
 
-    #filtrar apenas aqueles que são S na coluna IDG
+    # filtrar apenas aqueles que são S na coluna IDG
     df_bicsp = df_bicsp[df_bicsp[" IDG"] == "S"]
 
     # remover a coluna IDG
@@ -301,7 +312,7 @@ def etl_bicsp(file):
     df_bicsp.sort_values(by=["id"], inplace=True)
     # reset index
     df_bicsp.reset_index(drop=True, inplace=True)
-    
+
     # remove index column
 
     return df_bicsp

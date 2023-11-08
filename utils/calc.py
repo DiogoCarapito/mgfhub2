@@ -1,8 +1,7 @@
-
 def calc_score(df):
     # calc score each row
     df["score"] = 0
-    
+
     # if valor is between min_aceitavel and min_esperado, is equal to a normalized value between 0 and 2 depending how close it is to min_esperado and how far it is from min_aceitavel
     df.loc[
         (df["Valor"] >= df["min_aceitavel"]) & (df["Valor"] < df["min_esperado"]),
@@ -41,10 +40,9 @@ def calc_score(df):
     # if valor is less than min_aceitavel, is equal to 0
     df.loc[df["Valor"] < df["min_aceitavel"], "score"] = 0
 
-    #df["score"] = 2
-    
+    # df["score"] = 2
+
     return df
-        
 
 
 def cumprimento_unidade(df):
@@ -68,7 +66,7 @@ def cumprimento_unidade(df):
             .agg({"Total Utentes": "sum", "Utentes Cumpridores": "sum"})
             .reset_index()
         )
-        #df_indicador["Valor"] = 100
+        # df_indicador["Valor"] = 100
         df_indicador["Valor"] = (
             df_indicador["Utentes Cumpridores"] / df_indicador["Total Utentes"] * 100
         ).round(1)
@@ -83,8 +81,9 @@ def cumprimento_unidade(df):
 
 
 def calcular_idg(df):
-    #df = df[df["Hierarquia Contratual - Área"] == "Desempenho Assistencial"]
+    # df = df[df["Hierarquia Contratual - Área"] == "Desempenho Assistencial"]
     return round(df["percentagem_final"].sum(), 2)
+
 
 def calcular_idg_maximo(df):
     return round(df["percentagem_do_idg"].sum(), 2)

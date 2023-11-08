@@ -1,0 +1,72 @@
+id,nome_abreviado,area_clinica,Medico Familia,Total Utentes,Utentes Cumpridores,Valor,min_aceitavel,min_esperado,max_esperado,max_aceitavel,score,percentagem,percentagem_final
+1,Proporção de consultas realizadas pelo MF,Transversal,Unidade,26942.0,24280.0,90.1,75.0,78.0,90.0,92.0,1.9000000000000057,0.5,0.4750000000000014
+3,Taxa de domicílios médicos por 1.000 inscritos,Transversal,Unidade,21877.0,178.0,0.8,12.0,18.0,35.0,40.0,0.0,0.2,0.0
+5,Proporção de consultas realizadas pelo EF,Transversal,Unidade,18112.0,13333.0,73.6,65.0,70.0,88.0,92.0,2.0,0.5,0.5
+6,Taxa de utilização de consultas médicas - 3 anos,Transversal,Unidade,21305.0,17899.0,84.0,75.0,88.0,100.0,100.0,1.3846153846153846,0.2,0.13846153846153847
+8,Taxa de utilização de consultas de PF (méd./enf.),Planeamento Familiar,Unidade,4691.0,2435.0,51.9,38.0,60.0,100.0,100.0,1.2636363636363637,0.25,0.15795454545454546
+11,Proporção gráv. c/ consulta méd. vigil. 1º trim.,Saúde Materna,Unidade,101.0,98.0,97.0,85.0,91.0,100.0,100.0,2.0,0.25,0.25
+18,Proporção de hipertensos com IMC (12 meses),Hipertensão Arterial,Unidade,5169.0,4036.0,78.1,65.0,80.0,100.0,100.0,1.746666666666666,0.4166666666666667,0.36388888888888876
+20,"Proporção hipertensos < 65 A, com PA < 150/90",Hipertensão Arterial,Unidade,1910.0,873.0,45.7,45.0,67.0,100.0,100.0,0.06363636363636394,0.4166666666666667,0.01325757575757582
+23,Proporção hipertensos com risco CV (3 A),Hipertensão Arterial,Unidade,3247.0,1598.0,49.2,65.0,80.0,100.0,100.0,0.0,0.4166666666666667,0.0
+30,"Proporção idosos ou doença crónica, c/ vac. gripe",Respiratório,Unidade,6498.0,3889.0,59.8,45.0,55.0,100.0,100.0,2.0,0.625,0.625
+34,"Proporção obesos >=14A, c/ cons. vigil. obesid. 2A",Transversal,Unidade,3339.0,1825.0,54.7,60.0,72.0,100.0,100.0,0.0,0.2272727272727272,0.0
+36,Proporção utentes DM com registo de GRT,Diabetes Mellitus,Unidade,1632.0,1427.0,87.4,60.0,75.0,100.0,100.0,2.0,0.2272727272727272,0.2272727272727272
+37,Proporção DM c/ cons. enf. vigil. DM último ano,Diabetes Mellitus,Unidade,1632.0,1445.0,88.5,70.0,87.0,100.0,100.0,2.0,0.2272727272727272,0.2272727272727272
+39,"Proporção DM c/ última HbA1c <= 8,0%",Diabetes Mellitus,Unidade,1632.0,1168.0,71.6,55.0,70.0,100.0,100.0,2.0,0.2272727272727272,0.2272727272727272
+45,Prop. mulheres 25-60 anos c/ rastr. c. colo út.,Rastreio Oncológico,Unidade,5561.0,2475.0,44.5,41.0,60.0,100.0,100.0,0.368421052631579,0.25,0.04605263157894737
+46,"Proporção utentes [50; 75[A, c/ rastreio cancro CR",Rastreio Oncológico,Unidade,7382.0,4299.0,58.2,45.0,67.0,100.0,100.0,1.2000000000000002,0.2272727272727272,0.13636363636363635
+49,"Proporção utentes c/ DPOC, c/ FeV1 em 3 anos",Respiratório,Unidade,286.0,143.0,50.0,30.0,60.0,100.0,100.0,1.3333333333333335,1.25,0.8333333333333335
+53,"Proporção utentes >=14A, c/ registo consumo álcool",Saúde Mental,Unidade,18845.0,12026.0,63.8,46.0,70.0,100.0,100.0,1.483333333333333,0.2272727272727272,0.16856060606060597
+54,"Proporção utentes consum. álcool, c/ consulta 3A",Saúde Mental,Unidade,331.0,210.0,63.4,40.0,60.0,100.0,100.0,2.0,0.2272727272727272,0.2272727272727272
+63,"Proporção crianças 7A, c/ cons. méd. vig. e PNV",Saúde Infantil e Juvenil,Unidade,181.0,131.0,72.4,65.0,85.0,100.0,100.0,0.7400000000000007,0.625,0.2312500000000002
+95,"Proporção jovens 14A, c/ PNV cumprido ou execução",Saúde Infantil e Juvenil,Unidade,207.0,198.0,95.7,95.0,95.0,100.0,100.0,2.0,0.625,0.625
+98,"Proporção utentes >= 25 A, c/ vacina tétano",Saúde de adultos,Unidade,15856.0,14842.0,93.6,85.0,93.0,100.0,100.0,2.0,0.2272727272727272,0.2272727272727272
+99,Taxa utilização consultas de enfermagem - 3 anos,Transversal,Unidade,21305.0,11759.0,55.2,65.0,76.0,100.0,100.0,0.0,0.2,0.0
+255,Propor. quinolonas entre antib. fatur. (embal.),Transversal,Unidade,4120.0,235.0,5.7,0.0,0.0,7.0,10.0,2.0,0.7142857142857143,0.7142857142857143
+257,Propor. cefalosp. entre antib. fatur. (embal.),Transversal,Unidade,4120.0,178.0,4.3,0.0,0.0,4.5,6.5,2.0,0.7142857142857143,0.7142857142857143
+259,Proporção coxibes entre AINEs faturados (DDD),Transversal,Unidade,80791.0,5169.5,6.4,0.0,0.0,5.5,9.0,1.4857142857142855,0.7142857142857143,0.5306122448979591
+261,Proporção utentes DM c/ aval. risco úlcera pé,Diabetes Mellitus,Unidade,1632.0,1414.0,86.6,70.0,87.0,100.0,100.0,1.9529411764705875,0.2272727272727272,0.22192513368983943
+262,Proporção utentes com avaliação risco DM2 (3A),Transversal,Unidade,14480.0,3444.0,23.8,35.0,58.0,100.0,100.0,0.0,0.2272727272727272,0.0
+269,Índice de acompanham. adequado s. infantil 2º ano,Saúde Infantil e Juvenil,Unidade,127.0,99.1,78.0,0.7,0.8,100.0,100.0,2.0,0.625,0.625
+274,"Propor. DM2 c/ indic. insul., em terap. adequada",Diabetes Mellitus,Unidade,125.0,104.0,83.2,65.0,82.0,100.0,100.0,2.0,0.2272727272727272,0.2272727272727272
+275,Proporção novos DM2 em terap. c/ metform. monot.,Diabetes Mellitus,Unidade,91.0,56.0,61.5,55.0,70.0,100.0,100.0,0.8666666666666667,0.2272727272727272,0.09848484848484847
+276,Rácio DDD prescrita DPP-4 e antidiabét. orais,Diabetes Mellitus,Unidade,738640.0,144056.7,19.5,0.0,0.0,28.0,38.0,2.0,0.7142857142857143,0.7142857142857143
+294,Taxa domicílios enferm. p/ 1000 inscritos idosos,Transversal,Unidade,5035.0,441.0,8.8,300.0,570.0,1500.0,1500.0,0.0,0.625,0.0
+295,Propor. puérp. 5+ cons. vig. enf. grav. e c/ RP,Saúde Materna,Unidade,98.0,73.0,74.5,51.0,77.0,100.0,100.0,1.8076923076923077,0.25,0.22596153846153846
+297,Prop. idosos s/ presc. prol. ansiol/sedat/hipnót,Saúde Mental,Unidade,4839.0,4079.0,84.3,74.0,82.5,100.0,100.0,2.0,0.625,0.625
+300,"Nº médio prescr. consulta fisiatria, p/ utiliz.",Transversal,Unidade,15184.0,2531.0,16.7,0.0,0.0,0.1,16.0,0.0,1.5,0.0
+302,Índice de acompanham. adequado s. infantil 1º ano,Saúde Infantil e Juvenil,Unidade,115.0,102.6,89.2,0.8,0.9,1.0,1.0,0.0,0.625,0.0
+306,Propor. ute. s/ rastr. VIH/SIDA que o efetuaram,Saúde de adultos,Unidade,5745.0,478.0,8.3,3.0,5.0,100.0,100.0,2.0,0.2272727272727272,0.2272727272727272
+308,Proporção grávidas com ecografia 2º trimestre,Saúde Materna,Unidade,91.0,71.0,78.0,60.0,80.0,100.0,100.0,1.8,0.25,0.225
+310,Índice realização exames laborat. 1º trim. grav.,Saúde Materna,Unidade,92.0,81.25999999999999,88.3,0.6,0.7,1.0,1.0,0.0,0.25,0.0
+311,Índice realização exames laborat. 2º trim. grav.,Saúde Materna,Unidade,95.0,64.0,67.4,0.4,0.5,1.0,1.0,0.0,0.25,0.0
+312,Índice realização exames laborat. 3º trim. grav.,Saúde Materna,Unidade,111.0,70.77,63.8,0.3,0.4,1.0,1.0,0.0,0.25,0.0
+314,Proporção DM com PA >= 140/90 mmHg,Diabetes Mellitus,Unidade,1632.0,323.0,19.8,0.0,0.0,12.0,22.0,0.43999999999999995,0.2272727272727272,0.04999999999999998
+315,Proporção DM com C-LDL < 100 mg/dl,Diabetes Mellitus,Unidade,1632.0,1032.0,63.2,33.0,48.0,100.0,100.0,2.0,0.2272727272727272,0.2272727272727272
+330,Índice de utilização anual de consultas médicas,Transversal,Unidade,35162.0,25972.0,73.9,0.7,0.8,2.0,2.0,0.0,0.2,0.0
+331,Índice de utilização anual de consultas enferm.,Transversal,Unidade,20882.0,11232.5,53.8,0.6,0.7,2.0,2.0,0.0,0.2,0.0
+335,Prop. cons. ind. receit. c/ resposta 3 dias úteis,Não aplicável,Unidade,17840.0,16902.0,94.7,80.0,85.0,100.0,100.0,2.0,2.0,2.0
+339,Taxa anual ajustada episódios urgência hospitalar,Não aplicável,Unidade,21707.0,8336.48,38.4,0.0,0.0,47.0,63.0,2.0,0.2,0.2
+341,Despesa PVP medic. pres. compart. p/ insc. padrão,Transversal,Unidade,21673.0,3437123.6,15859.0,0.0,0.0,130.0,140.0,0.0,0.7142857142857143,0.0
+342,Proporção consul. méd. inic. ut. <= 15 dias úteis,Não aplicável,Unidade,4809.0,4125.0,85.8,70.0,88.0,100.0,100.0,1.7555555555555553,2.0,1.7555555555555553
+344,Propor. consultas médicas realiz. no dia agendam.,Não aplicável,Unidade,26964.0,10269.0,38.1,21.0,26.0,41.0,46.0,2.0,0.2,0.2
+345,Propor. consul. enfer. realiz. no dia do agendam.,Não aplicável,Unidade,18229.0,5679.0,31.2,18.0,23.0,40.0,45.0,2.0,0.2,0.2
+346,Propor. consul. realiz. intervalo [8; 11[h (Q1),Não aplicável,Unidade,45249.0,14464.0,32.0,15.0,20.0,35.0,37.5,2.0,0.5,0.5
+349,Propor. consul. realiz. intervalo [17; 20]h (Q4),Não aplicável,Unidade,45249.0,4038.0,8.9,12.0,17.5,25.0,35.0,0.0,0.5,0.0
+350,Custo c/ terapêut. do doente c/ Diabetes Mellitus,Diabetes Mellitus,Unidade,1632.0,1021264.13,62577.5,60.0,60.0,350.0,420.0,0.0,0.2272727272727272,0.0
+351,Custo c/ terap. doente c/ Diab. Mell. controlado,Diabetes Mellitus,Unidade,1168.0,757181.45,64827.2,0.0,0.0,350.0,420.0,0.0,0.2272727272727272,0.0
+352,Custo c/ terapêut. do doente c/ HTA,Hipertensão Arterial,Unidade,5169.0,447205.3,8651.7,40.0,40.0,80.0,90.0,0.0,0.4166666666666667,0.0
+353,Custo c/ terapêut. do doente c/ HTA controlada,Hipertensão Arterial,Unidade,2825.0,287255.57,10168.3,0.0,0.0,90.0,100.0,0.0,0.4166666666666667,0.0
+354,Despesa MCDT prescr. p/ insc. padrão (p. conv.),Transversal,Unidade,21673.0,1257097.8,5800.3,0.0,0.0,42.5,49.0,0.0,1.5,0.0
+380,"Prop. adultos c/ asma/DPOC/bronq. cr., com diagn.",Respiratório,Unidade,1185.0,1064.0,89.8,74.0,81.0,100.0,100.0,2.0,1.25,1.25
+381,"Prop. adultos c/ depressão/ansiedade, com diagn.",Respiratório,Unidade,3706.0,3005.0,81.1,70.0,78.0,100.0,100.0,2.0,0.2272727272727272,0.2272727272727272
+382,"Prop. adultos com DM, com diagn.",Respiratório,Unidade,1591.0,1558.0,97.9,97.0,98.7,100.0,100.0,1.0588235294117696,0.2272727272727272,0.12032085561497378
+383,"Prop. adultos com HTA, com diagnóstico",Respiratório,Unidade,4662.0,4419.0,94.8,89.0,94.0,100.0,100.0,2.0,0.4166666666666667,0.4166666666666667
+384,Propor. RN cuja mãe tem registo de gravidez,Saúde Materna,Unidade,112.0,94.0,83.9,89.0,94.0,100.0,100.0,0.0,0.25,0.0
+395,"Prop. uten. >= 15 anos, c/ reg. hábit. tabág. 3A",Transversal,Unidade,18630.0,12321.0,66.1,55.0,71.0,100.0,100.0,1.3874999999999993,0.2272727272727272,0.15767045454545442
+397,Prop. fumador c/ int. breve ou muito breve 1 ano,Transversal,Unidade,2174.0,822.0,37.8,15.0,22.0,100.0,100.0,2.0,0.2272727272727272,0.2272727272727272
+398,Prop. gráv. fumad. c/ int. breve ou mt. breve 1ºT,Transversal,Unidade,18.0,6.0,33.3,40.0,60.0,100.0,100.0,0.0,0.25,0.0
+404,Incidência anual de pessoas em abstin. tabág. 12M,Transversal,Unidade,18574.0,135.0,0.7,20.0,60.0,10000.0,10000.0,0.0,0.2272727272727272,0.0
+409,Prop ute s/ prescr prolo ansio/seda/hipn (ajust),Saúde Mental,Unidade,21673.0,20363.7,94.0,89.0,91.5,100.0,100.0,2.0,0.7142857142857143,0.7142857142857143
+410,Taxa anual ajustada utiliz. freq. urgência hospit.,Não aplicável,Unidade,21707.0,407.9,1.9,0.0,0.0,2.7,3.6,2.0,0.2,0.2
+412,[Cons. dia UF inscr.] / ([cons. dia] + [urgênc.]),Não aplicável,Unidade,12839.0,7798.0,60.7,40.0,60.0,85.0,95.0,2.0,0.2,0.2
